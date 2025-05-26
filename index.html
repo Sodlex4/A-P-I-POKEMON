@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Pokémon Info Finder</title>
@@ -9,29 +10,61 @@
       padding: 20px;
       background: #f4f4f4;
       text-align: center;
+      margin: 0;
     }
-    input, button {
+
+    input,
+    button {
       padding: 10px;
       font-size: 16px;
       margin: 10px;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
     }
+
     #pokemonResult {
       margin-top: 20px;
       background: white;
       padding: 20px;
       border-radius: 10px;
       display: inline-block;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      box-sizing: border-box;
     }
+
     img {
-      height: 150px;
+      height: auto;
+      max-width: 100%;
     }
+
     ul {
       list-style: none;
       padding: 0;
+      text-align: left;
+    }
+
+    /* ✅ Responsive styles for small screens */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      input,
+      button {
+        font-size: 14px;
+        margin: 8px 0;
+      }
+
+      #pokemonResult {
+        padding: 15px;
+        width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <h1>Pokémon Info Finder</h1>
@@ -40,7 +73,7 @@
 
   <div id="pokemonResult"></div>
 
-  <script> 
+  <script>
     async function getPokemon() {
       const name = document.getElementById('pokemonName').value.toLowerCase();
       const resultDiv = document.getElementById('pokemonResult');
@@ -73,4 +106,5 @@
   </script>
 
 </body>
+
 </html>
